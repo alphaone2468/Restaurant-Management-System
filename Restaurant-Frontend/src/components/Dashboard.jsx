@@ -30,7 +30,7 @@ export default function Dashboard({searchQuery}) {
   const [revenueData, setRevenueData] = useState([]);
   const [periodRevenue, setPeriodRevenue] = useState(0);
 
-  console.log(searchQuery);
+  // console.log(searchQuery);
 
   useEffect(() => {
     fetchTables();
@@ -52,26 +52,26 @@ useEffect(()=>{
   setFilteredElements(dashboardElements.filter(element => element.toLowerCase().includes(searchQuery.toLowerCase())));
 },[searchQuery])
 
-  console.log(filteredElements);
+  // console.log(filteredElements);
 
   const fetchTables = async () => {
     const response = await fetch('https://restaurant-management-system-1-pz2f.onrender.com/api/tables');
     const data = await response.json();
-    console.log(data)
+    //console.log(data)
     setTables(data);
   }
 
   const fetchAnalytics = async () => {
     const response = await fetch('https://restaurant-management-system-1-pz2f.onrender.com/api/analytics');
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
     setAnalytics(data);
   }
 
   const fetchChefs = async () => {
     const response = await fetch('https://restaurant-management-system-1-pz2f.onrender.com/api/chefs');
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
     setChefs(data);
   }
 
@@ -225,7 +225,7 @@ const filterOrdersByPeriod = (orders, period) => {
   const fetchOrders = async () => {
     const response = await fetch('https://restaurant-management-system-1-pz2f.onrender.com/api/orders');
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
     setOrders(data);
   }
 

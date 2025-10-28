@@ -33,11 +33,11 @@ exports.createClient = async (req, res) => {
         }
         
         const client = await Client.findOne({ contact: req.body.contact });
-        console.log("Existing Client:", client);
+        // console.log("Existing Client:", client);
         if (client) {
             return res.status(200).json({ client:client });
         } else {
-            console.log(req.body);
+            // console.log(req.body);
             const client = new Client(req.body);
             const savedClient = await client.save();
             return res.status(201).json({client:savedClient});

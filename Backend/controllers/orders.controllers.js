@@ -7,11 +7,11 @@ exports.getAllOrders = async (req, res) => {
         let orders = await Order.find().populate('items.itemId').lean();
         const tables = await Table.find().lean();
         const tableIds = tables.map((table) => table._id.toString());
-        console.log(tableIds);
+        // console.log(tableIds);
         orders = orders.map(order => {
             if(order.orderType === "Dine In"){
                 const tableNumber = tableIds.indexOf(order.tableId.toString());
-                console.log("🚀 ~ tableNumber:", tableNumber);
+                // console.log("🚀 ~ tableNumber:", tableNumber);
                 return {...order, tableNumber: tableNumber+1 };
             }
             return order;

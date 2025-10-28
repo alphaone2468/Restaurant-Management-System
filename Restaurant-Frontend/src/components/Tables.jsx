@@ -27,7 +27,7 @@ export default function Tables() {
         avaliableSeats:table.avaliableSeats
       }));
 
-      console.log(transformedData);
+      //console.log(transformedData);
       
       setTables(transformedData);
     } catch (error) {

@@ -44,7 +44,7 @@ export default function App() {
   const fetchItems = async () => {
     let response = await fetch('https://restaurant-management-system-1-pz2f.onrender.com/api/items');
     response = await response.json();
-    console.log("Fetched Items:", response);
+    //console.log("Fetched Items:", response);
     response = response.map(item => ({ ...item, quantity: 0 }));
     setItems(response);
   };
@@ -66,7 +66,7 @@ export default function App() {
       body: JSON.stringify(userDetails),
     });
     saveClient = await saveClient.json();
-    console.log('Client saved:', saveClient.client);
+    //console.log('Client saved:', saveClient.client);
     setUser(saveClient.client);
     setCurrentStep(2);
   };
@@ -180,7 +180,7 @@ export default function App() {
         body: JSON.stringify(orderData),
       });
       const savedOrder = await response.json();
-      console.log('Order placed successfully:', savedOrder);
+      //console.log('Order placed successfully:', savedOrder);
       
       
       setTimeout(() => {
