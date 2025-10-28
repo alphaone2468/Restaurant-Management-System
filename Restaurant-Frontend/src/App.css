@@ -20,8 +20,35 @@ header {
   gap: 15px;
 }
 
+.logo{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    margin:10px 0px 10px 6px;
+}
+
 .logo img {
   border-radius: 50%;
+  height:24px;
+  width:24px;
+}
+
+#logo{
+  height: 55px;
+  width: 55px;
+}
+
+#logo img {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+#logo h1 {
 }
 
 .searchContainer {
@@ -81,6 +108,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
+  margin-bottom: 24px;
 }
 
 .mainContent{
@@ -89,4 +117,49 @@ header {
   margin-left: 3rem;
   border-radius: 32px;
   background-color: white;
+}
+
+.chartSection {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.chartLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendText {
+  color: #999;
+  font-size: 14px;
+  min-width: 80px;
+}
+
+.legendPercent {
+  color: #999;
+  font-size: 14px;
+  min-width: 40px;
+}
+
+.legendBar {
+  height: 6px;
+  flex: 1;
+  border-radius: 3px;
+}
+
+.cardHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid #d9d9d9;
 }

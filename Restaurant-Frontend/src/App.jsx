@@ -11,17 +11,19 @@ import dashboardLogo from "./assets/dashboard.png";
 import tablesLogo from "./assets/tables.png";
 import ordersLogo from "./assets/orders.png";
 import itemsLogo from "./assets/items.png";
+import { useState } from "react";
 
 export default function App() {
+  const [searchQuery,setSearchQuery]=useState("");
   return (
     <div>
       <header className="header">
         <div className="logo">
-          <img src={logo} alt="Logo" width={55} />
+          <img src={logo} alt="Logo" id='logo'/>
         </div>
 
         <div className="searchContainer">
-          <input type="text" placeholder="Filter..." />
+          <input type="text" placeholder="Filter..." onChange={(e)=>setSearchQuery(e.target.value)} />
           <button className="dropdownBtn">
             <img src={downArrow} alt="" />
           </button>
@@ -32,7 +34,7 @@ export default function App() {
         <aside className="sidebar">
           <div className="topContainer">
             <div className="logo">
-              <Link to="/">
+              <Link to="/" style={{marginTop:'5px'}}>
                 <img src={dashboardLogo} alt="Logo" width={55} />
               </Link>
             </div>
@@ -62,7 +64,9 @@ export default function App() {
 
         <div className="mainContent">
           <Routes>
-            <Route path="/" element={<Dashboard/>} />
+            <Route path="/" element={<Dashboard
+              searchQuery={searchQuery}
+            />} />
             <Route path="/tables" element={<Tables/>} />
             <Route path="/orders" element={<Orders/>} />
             <Route path="/items" element={<Items/>} />

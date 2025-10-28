@@ -1,7 +1,0 @@
-SubTasks :
-
-    1. Manage Tables from DataBase
-    2. Make changes to Table UI
-    3. Add some Items to DataBase
-    4. Make User-Frontend UI good looking
-    5. Show Items from Database

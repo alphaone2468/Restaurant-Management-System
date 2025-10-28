@@ -1,0 +1,18 @@
+.formOverlay {
+  position: absolute;
+  background: transparent;
+  z-index: 10;
+}
+.formTitle {
+  text-align: center;
+}
+.errorText {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.submitBtn {
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 8px;
+}

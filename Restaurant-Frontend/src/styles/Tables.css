@@ -1,0 +1,74 @@
+.tableContainer {
+  padding: 30px 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: calc(100vh - 80px);
+}
+
+.pageTitle { font-size: 28px; font-weight: 600; color: #333; margin-bottom: 30px; }
+.tablesSection { margin-bottom: 30px; }
+.tablesSectionTitle { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; }
+
+.tablesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.tableCard {
+  background-color: #f3f7f6;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.tableCardHeader { display: flex; justify-content: flex-end; align-items: center; }
+.deleteBtn { background: none; border: none; cursor: pointer; font-size: 18px; }
+.deleteBtn:hover:not(:disabled) { color: #d32f2f; }
+.deleteBtn:disabled { color: #ccc; cursor: not-allowed; }
+
+.tableNumber { font-size: 28px; font-weight: 700; margin-top: 6px; }
+.tableSeatInfo { font-size: 11px; color: #999; margin-bottom: 10px; }
+
+.bookingBtn { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; background: #f0f0f0; color: #333; cursor: pointer; font-size: 11px; font-weight: 500; transition: all 0.2s; }
+.bookingBtn.booked { background: #4caf50; color: white; border-color: #45a049; }
+.bookingBtn:hover { opacity: 0.8; }
+
+.addTableCard { border: 2px dashed #ddd; border-radius: 6px; padding: 15px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 136px; cursor: pointer; background: #fafafa; position: relative; }
+.addIcon { font-size: 28px; margin-bottom: 8px; }
+.addTableText { font-size: 13px; color: #666; font-weight: 500; }
+
+.modal { display: none; position: absolute; z-index: 1000; }
+.modal.active { display: block; }
+.modalWrapper { display: flex; gap: 15px; align-items: flex-start; justify-content: flex-start; }
+
+.existingTableCard { background: white; border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-width: 140px; }
+.existingTableTitle { font-size: 12px; color: #999; margin-bottom: 15px; font-weight: 500; }
+.existingTableNumber { font-size: 32px; font-weight: 700; color: #333; margin-bottom: 10px; }
+.existingTablePrice { font-size: 12px; color: #999; }
+.deleteIconSmall { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 16px; }
+.plusIcon { font-size: 32px; color: #999; margin-bottom: 10px; }
+.arrowDots { font-size: 24px; color: #ddd; }
+
+.newTableCard { background: #f3f7f6; border-radius: 18px; padding: 20px; box-shadow: 2px 2px 8px rgba(0,0,0,0.5); width: 194px; }
+.formLabel { display: block; font-size: 12px; color: #666; font-weight: 600; margin-bottom: 8px; text-align: left; }
+.formGroup { margin-bottom: 18px; display: flex; flex-direction: column; }
+.formInput { width: 100%; padding: 5px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+.formInput.largeInput { font-size: 28px; font-weight: bold; text-align: center; border: none; border-bottom: 2px dotted #ccc; border-radius: 0; background: #f3f7f6; }
+.formSelect { font-size: 16px; font-weight: 500; width: 35%; border-radius: 10px; }
+.formSelect option { font-size: 18px; }
+.createBtn { width: 100%; background-color: #5a5a5a; color: white; font-size: 14px; font-weight: 500; padding: 16px; border: none; border-radius: 15px; margin-top: 20px; cursor: pointer; }
+.createBtn:hover { background-color: #4a4a4a; }
+.closeModal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; }
+.tableFooter { float: right; font-size: 12px; }
+
+.capacityIcon img { margin-top: 4px; margin-right: 4px; }
+
+
