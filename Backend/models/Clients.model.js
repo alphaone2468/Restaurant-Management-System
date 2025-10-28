@@ -5,15 +5,16 @@ const ClientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    phone: {
-        type: String,
-        required: true,
-        unique: true
-    },
     address: {
         type: String,
         required: true
+    },
+    contact: {
+        type: String,
+        required: true,
+        unique: true
     }
+    
 }, { timestamps: true} );
 
 module.exports = mongoose.model('Client', ClientSchema);

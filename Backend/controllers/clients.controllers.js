@@ -21,10 +21,29 @@ exports.getClientById = async (req, res) => {
 
 exports.createClient = async (req, res) => {
     try {
-        const client = new Client(req.body);
-        const savedClient = await client.save();
-        res.status(201).json(savedClient);
+
+        if(!req.body.name){
+            return  res.status(400).json({ message: 'Name is required' });
+        }
+        if(!req.body.contact){
+            return  res.status(400).json({ message: 'Contact is required' });
+        }
+        if(!req.body.address){
+            return  res.status(400).json({ message: 'Address is required' });
+        }
+        
+        const client = await Client.findOne({ contact: req.body.contact });
+        console.log("Existing Client:", client);
+        if (client) {
+            return res.status(200).json({ client:client });
+        } else {
+            console.log(req.body);
+            const client = new Client(req.body);
+            const savedClient = await client.save();
+            return res.status(201).json({client:savedClient});
+        }
     } catch (error) {
+        console.error("Error creating client:", error);
         res.status(400).json({ message: error.message });
     }
 };

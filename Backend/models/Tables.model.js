@@ -1,8 +1,8 @@
 const mongoose= require('mongoose');
 
 const TableSchema = new mongoose.Schema({
-    tableNumber: {
-        type: Number,
+    tableName: {
+        type: String,
     },
     capacity: {
         type: Number,
@@ -11,7 +11,8 @@ const TableSchema = new mongoose.Schema({
     },
     avaliableSeats : {
         type: Number,
-        required: true
+        required: true,
+        default: function() { return this.capacity; }
     },
     status: {
         type: String,

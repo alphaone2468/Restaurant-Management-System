@@ -1,5 +1,18 @@
 const mongoose = require('mongoose');
 
+
+const ItemSchema = new mongoose.Schema({
+    itemId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Item'
+    },
+    quantity: {
+        type: Number,
+        required: true,
+        default: 1
+    }
+},{ _id : false });
+
 const OrdersSchema = new mongoose.Schema({
     orderNumber: {
         type: Number,
@@ -7,21 +20,17 @@ const OrdersSchema = new mongoose.Schema({
     },
     orderType: {
         type: String,
-        enum: ['Dine-In', 'Takeaway'],
+        enum: ['Dine In', 'Take Away'],
         required: true
     },
-    items:[{
-        itemsId:{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Item'
-        },
-        quantity: {
-            type: Number,
-            required: true,
-            default: 1
-        }
-    }],
-    tableNumber: {
+    orderedBy:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Client'
+    },
+    items:[
+        ItemSchema
+    ],
+    tableId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Table',
     },
@@ -31,6 +40,10 @@ const OrdersSchema = new mongoose.Schema({
         enum: ['Pending', 'Preparing', 'Ready', 'Served'],
         default: 'Pending'
     },
+    cookingInstructions: {
+        type: String,
+        default: ''
+    }
 }, { timestamps: true} );
 
 module.exports = mongoose.model('Order', OrdersSchema);

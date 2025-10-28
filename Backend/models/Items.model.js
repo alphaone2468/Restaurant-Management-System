@@ -12,7 +12,6 @@ const ItemSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true,
-        enum: ['Appetizer', 'Main Course', 'Dessert', 'Beverage']
     },
     image: {
         type: String,
